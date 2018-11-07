@@ -44,7 +44,6 @@ import com.google.firebase.database.FirebaseDatabase
  * The main layout lists the demonstrated features, with buttons to launch them.
  */
 
-//class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener
 class DiscoverActivity : AppCompatActivity() {
 
 //    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
@@ -58,7 +57,6 @@ class DiscoverActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         //direct to layer demo
 
         mAuth = FirebaseAuth.getInstance()

@@ -31,7 +31,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCxcgoPevAm58nsp501Da0XyRSU5e70x9k" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".DiscoverActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,7 +39,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".LayersDemoActivity"/>
-        <activity android:name=".UiSettingsDemoActivity" />
+
     </application>
 
 </manifest>
+
+    <!--<activity android:name=".UiSettingsDemoActivity" />-->

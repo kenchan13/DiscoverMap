@@ -45,7 +45,7 @@ import com.google.firebase.database.FirebaseDatabase
  */
 
 //class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener
-class MainActivity : AppCompatActivity() {
+class DiscoverActivity : AppCompatActivity() {
 
 //    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
 //        val demo: DemoDetails = parent?.adapter?.getItem(position) as DemoDetails

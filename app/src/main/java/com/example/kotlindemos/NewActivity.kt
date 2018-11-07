@@ -39,6 +39,8 @@ class NewActivity : AppCompatActivity() {
     var database = FirebaseDatabase.getInstance()
     var myRef = database.getReference("message")
     var selectedType : String? = null
+    var lat : String? = null
+    var long : String?  = null
 
     lateinit var eventTitleUI: EditText
     lateinit var startDateUI: TextView
@@ -217,7 +219,8 @@ class NewActivity : AppCompatActivity() {
         if (requestCode == PLACE_PICKER_REQUEST && resultCode == Activity.RESULT_OK) {
             val place = PlacePicker.getPlace(data, this)
             val toastMsg = String.format("Place: %s", place.name)
-//            addressUI.text = place!!.name.toString().plus("\n".plus(place!!.address).plus("\n".plus(place!!.phoneNumber)))
+            lat = place!!.latLng.latitude.toString()
+            long = place!!.latLng.longitude.toString()
             addressUI.text = place!!.latLng.latitude.toString().plus("\n".plus(place!!.latLng.longitude.toString()))
             Toast.makeText(this, toastMsg, Toast.LENGTH_SHORT).show()
         }

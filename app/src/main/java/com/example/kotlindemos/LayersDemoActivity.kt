@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
+import android.graphics.Point
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
@@ -82,13 +83,12 @@ class LayersDemoActivity :
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        //change the location button to right bottom by joseph
+        //change the gps button to right bottom by joseph
         val locationButton = (mapFragment.view!!.findViewById<View>(Integer.parseInt("1")).parent as View).findViewById<View>(Integer.parseInt("2"))
 
         val rlp = locationButton.layoutParams as RelativeLayout.LayoutParams
-        rlp.addRule(RelativeLayout.ALIGN_PARENT_TOP, 0)
-        rlp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE)
-        rlp.setMargins(0, 0, 30, 30)
+        rlp.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE)
+        rlp.setMargins(0, 50, 30, 0)
 
         bottomNavBarMap()
         checkLocation()

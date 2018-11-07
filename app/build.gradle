@@ -56,4 +56,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:16.0.2'
     //design library
     implementation 'com.android.support:design:27.1.1'
+    implementation 'com.getbase:floatingactionbutton:1.9.1'
 }

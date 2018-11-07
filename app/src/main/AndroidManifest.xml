@@ -39,6 +39,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".LayersDemoActivity"/>
+        <activity android:name=".NewActivity"/>
 
     </application>
 

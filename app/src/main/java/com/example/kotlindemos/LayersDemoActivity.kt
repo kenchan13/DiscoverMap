@@ -83,32 +83,26 @@ class LayersDemoActivity :
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        //change the gps button to right bottom by joseph
+        //GPS button Position
         val locationButton = (mapFragment.view!!.findViewById<View>(Integer.parseInt("1")).parent as View).findViewById<View>(Integer.parseInt("2"))
 
         val rlp = locationButton.layoutParams as RelativeLayout.LayoutParams
         rlp.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE)
         rlp.setMargins(0, 50, 30, 0)
 
+        // addSchedule Button
+        addSchedulePlus.setOnClickListener{
+            val intent = Intent(this , NewActivity::class.java)
+            Intent(this, NewActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
         bottomNavBarMap()
         checkLocation()
 
     }
-//
-//    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-//        R.id.addSchedule -> {
-//            val intent = Intent(this, NewActivity::class.java)
-//            startActivity(intent)
-//            true
-//        }
-//
-//        else -> {
-//            // If we got here, the user's action was not recognized.
-//            // Invoke the superclass to handle it.
-//            super.onOptionsItemSelected(item)
-//        }
-//    }
-
 
     /**
      * Display a dialog box asking the user to grant permissions if they were denied
@@ -165,45 +159,6 @@ class LayersDemoActivity :
 
         false
     }
-
-//    private fun changeFragmentTo(type: FragmentType) {
-//        val transaction = manager.beginTransaction()
-//        when(type) {
-//            FragmentType.inspiration -> {
-////                val homeFragment = HomeFragment()
-//                transaction.replace(R.id.map, homeFragment)
-//            }
-//
-//            FragmentType.dashboard -> {
-////                val dashboardFragment = DashboardFragment()
-//                transaction.replace(R.id.map, dashboardFragment)
-//            }
-//
-//            FragmentType.notification -> {
-////                val notificationFragment = NotificationDashboard()
-//                transaction.replace(R.id.map, notificationFragment)
-//            }
-//
-//        }
-//        transaction.addToBackStack(null)
-//        transaction.commit()
-//    }
-
-
-
-//    private val myLocationChangeListener = GoogleMap.OnMyLocationChangeListener { location ->
-//        val loc = LatLng(location.latitude, location.longitude)
-//
-//        var database = FirebaseDatabase.getInstance()
-//        var gps = GPS(loc.latitude, loc.longitude)
-//        var mAuth = FirebaseAuth.getInstance()
-//        var currentUser = mAuth!!.currentUser
-//        val userID = currentUser!!.uid
-//        var ref = database.getReference("gps_data/$userID")
-//        ref.setValue(gps)
-//
-//    }
-
 
     private val isLocationEnabled: Boolean
         get() {

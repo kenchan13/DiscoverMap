@@ -30,14 +30,8 @@ import com.google.android.gms.tasks.Task
 import android.support.annotation.NonNull
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.layers_demo.*
 
-
-//import android.view.View
-//import android.view.ViewGroup
-//import android.widget.AdapterView
-//import android.widget.ArrayAdapter
-//import android.widget.ListAdapter
-//import android.widget.ListView
 
 /**
  * The main activity of the API library demo gallery.
@@ -57,21 +51,14 @@ class DiscoverActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //direct to layer demo
 
+        //direct to layer demo
         mAuth = FirebaseAuth.getInstance()
         signInAnonymous()
-        startActivity(Intent(this, LayersDemoActivity::class.java))
+        val intent = Intent(this, LayersDemoActivity::class.java)
+        startActivity(intent)
 
-//        val listAdapter: ListAdapter = CustomArrayAdapter(this, DemoDetailsList.DEMOS)
-//
-//        // Find the view that will show empty message if there is no demo in DemoDetailsList.DEMOS
-//        val emptyMessage = findViewById<View>(R.id.empty)
-//        with(findViewById<ListView>(R.id.list)) {
-//            adapter = listAdapter
-//            onItemClickListener = this@MainActivity
-//            emptyView = emptyMessage
-//        }
+
     }
 
     public override fun onStart() {
